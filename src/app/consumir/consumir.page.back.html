@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Consumidor</ion-title>
+  </ion-toolbar>
+  {{trama}}
+  <br>
+  {{estado}}
+  <br>
+</ion-header>
+
+<ion-content>
+
+  <!--  <a (click)="back()">ir a home</a> -->
+  <div id="container">
+
+    <strong> Hola {{nombre}} {{apellido}}<br>
+      Tu saldo {{restante}} ({{gasto}})</strong>
+
+
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="cerrar()">CERRAR</ion-button>
+</ion-footer>

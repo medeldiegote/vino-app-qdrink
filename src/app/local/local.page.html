@@ -1,0 +1,116 @@
+<style>
+  .scrol{
+    display: block;
+    position: relative;
+    flex: 1 1 0%;
+    width: 100%;
+    height: 100%;
+
+    contain: size style;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: scroll;}
+</style>
+<body id="page-top">
+  <!-- Masthead-->
+  <header>
+  
+    <div class="scrol">
+      <div class="row p-t-50 justify-content-center">
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              <label class="bold"></label>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <!--  <ion-input [(ngModel)]='inputPrecio' type='number' id="precioinput" class="form-control"
+                placeholder="valor nuevo"></ion-input> -->
+                         <ion-select [(ngModel)]='inputMac' interface="action-sheet">
+                <ion-select-option *ngFor="let pair of pairedList; let i = index" value="{{i}}">{{pair.name}}
+                </ion-select-option>
+              </ion-select>
+            </div>
+            <button (click)='setMac()' class="btn btn-primary mb-2">SET</button>
+          </div>
+       <!--    <div class="fs-16 p-t-30"><strong>Caja actual: {{mac_actual}}</strong></div> -->
+          <div class="fs-16 p-t-30">Tablet conectada a una caja </div>
+        </div>
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+         <!-- <ion-item>
+            <ion-label>Pre-cargados</ion-label>
+            <ion-select interface="action-sheet" [(ngModel)]="nom"  (ionChange)="optionsFn();">
+              <ion-select-option *ngFor="let tipo of tipos" [value]="tipo">{{tipo.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <br>-->
+          <ion-item>
+          <form [formGroup]="updateNombre" (ngSubmit)="setNombre()">
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              <label class="bold"></label>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <ion-input formControlName="newNombre" type='text' class="form-control" placeholder="valor nuevo">
+              </ion-input>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">SET</button>
+          </div>
+          <div class="fs-16 p-t-30">Pico 1: {{nombre}}</div>
+          </form>
+        </ion-item>
+        </div>
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+          <form [formGroup]="updateCaracteristicas" (ngSubmit)="setCaracteristicas()">
+          <div class="form-inline">
+            <!-- <div class="form-group mb-2">
+              <label class="bold">Actual: {{caracteristicas}}</label>
+            </div> -->
+            <div class="form-group">
+             <!--  <ion-textarea   class="form-control" placeholder="valor nuevo">
+              </ion-textarea> -->
+              <ion-textarea rows="6" cols="50"  formControlName="newCaracteristicas"></ion-textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">SET</button>
+          </div>
+          <div class="fs-16 p-t-30">Defina características del pico 1</div>
+          </form>
+        </div>
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">      
+           <form [formGroup]="updateNombre2" (ngSubmit)="setNombre2()">
+           <div class="form-inline">
+             <div class="form-group mb-2">
+               <label class="bold"></label>
+             </div>
+             <div class="form-group mx-sm-3 mb-2">
+               <ion-input formControlName="newNombre2" type='text' class="form-control" placeholder="valor nuevo">
+               </ion-input>
+             </div>
+             <button type="submit" class="btn btn-primary mb-2">SET</button>
+           </div>
+           <div class="fs-16 p-t-30">Pico 2: {{nombre2}}</div>
+           </form>
+         </div>
+         <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+           <form [formGroup]="updateCaracteristicas2" (ngSubmit)="setCaracteristicas2()">
+           <div class="form-inline">             
+             <div class="form-group">              
+               <ion-textarea rows="6" cols="50"  formControlName="newCaracteristicas2"></ion-textarea>
+             </div>
+             <button type="submit" class="btn btn-primary mb-2">SET</button>
+           </div>
+           <div class="fs-16 p-t-30">Defina características del pico 2</div>
+           </form>
+         </div>
+         <div class="col-md-8 p-t-15 p-b-50 align-items-center text-center">
+          <a class="btn btn-primary btn-xl" (click)="cerrar()">TERMINAR</a>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <!-- Bootstrap core JS-->
+  <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+
+</body>

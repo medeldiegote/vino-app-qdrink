@@ -1,0 +1,53 @@
+<body id="page-top">
+  <header class="masthead">
+    <div class="dot2">
+      <img src="assets/img/iso3.png" alt="">
+    </div>
+      <div class="h-100 d-inline-block" style="width: 50%; background-color: rgba(94,33,41,0.5) " (click)="scan('1')">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+          <div class="col-lg-8 align-self-center" >
+            <h2 class="c-white" style="font-size: 45px;">{{pico1 | uppercase}}</h2>
+            <h4 class="c-white" style="font-size: 20px;">{{caracteristicas | uppercase}}</h4>
+                    </div>         
+        </div>
+      </div>
+      <div class="h-100 d-inline-block" style="width: 50%; background-color: rgba(213, 145,149,0.5)" (click)="scan('2')">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+          <div class="col-lg-8 align-self-center" >
+            <h2 class="c-white" style="font-size: 45px;" >{{pico2 | uppercase}}</h2>
+            <h4 class="c-white" style="font-size: 20px;">{{caracteristicas2 | uppercase}}</h4>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: -60px;margin-left: 465px;">
+        <p class='dot' id="conexion_home"></p>
+        <p class='dot' id="estado_home"></p>
+      </div>
+  </header>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Consumidor</ion-title>
+  </ion-toolbar>
+  {{trama}}
+  <br>
+  {{estado}}
+  <br>
+</ion-header>
+
+<ion-content>
+
+   <a (click)="back()">ir a home</a> -->
+<!-- <div id="container">
+
+    <strong> Hola {{nombre}} {{apellido}}<br>
+      Tu saldo {{restante}} ({{gasto}})</strong>
+
+
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="cerrar()">CERRAR</ion-button>
+</ion-footer> -->

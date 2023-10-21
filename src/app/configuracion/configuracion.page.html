@@ -1,0 +1,155 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>configuracion</ion-title>
+  </ion-toolbar>
+  {{trama}}<br>
+  {{estado}}
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p> Precio por litro</p>
+      </ion-col>
+      <p>Valor actual: {{precio}}</p>
+      <ion-col>
+        <ion-input [(ngModel)]='inputPrecio' type='number' placeholder="Valor nuevo"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)='setPrecio()'>Set Precio</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p> Set cerveza</p>
+      </ion-col>
+      <p>Valor actual: {{cerveza}}</p>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)='setCerveza()'>Set Cerveza</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button(click)="cerrar()">CERRAR</ion-button>
+</ion-footer> -->
+
+<body id="page-top">
+  <!-- Masthead-->
+  <header>
+    <ion-content>
+    <div class="container">
+      <div class="row p-t-50 justify-content-center">
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+          <form [formGroup]="updatePrecio" (ngSubmit)="setPrecio()">
+
+            <div class="form-inline">
+              <div class="form-group mb-2">
+                <label class="bold">Actual:{{precio}}</label>
+              </div>
+              <div class="form-group mx-sm-3 mb-2">
+                <ion-input formControlName="newPrecio" type='number' id="precioinput" class="form-control"
+                  placeholder="valor nuevo"></ion-input>
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">SET</button>
+            </div>
+            <div class="fs-16 p-t-30">Valor del precio por litro. Se espera un valor entero.</div>
+          </form>
+        </div>
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+          <form [formGroup]="updateSensibilidad" (ngSubmit)="setSensibilidad()">
+            <div class="form-inline">
+
+              <div class="form-group mb-2">
+                <label class="bold">Actual: {{sensibilidad}}</label>
+              </div>
+              <div class="form-group mx-sm-3 mb-2">
+                <ion-input type='number' formControlName="newSensibilidad" class="form-control"
+                  placeholder="valor nuevo">
+                </ion-input>
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">SET</button>
+            </div>
+            <div class="fs-16 p-t-30">Define la sensibilidad para detectar espuma. Valores entre 70 a 100</div>
+          </form>
+        </div>
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+          <form class="form-inline">
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label class="bold" *ngIf="cerveza==1">Es cerveza</label>
+              <label class="bold" *ngIf="cerveza==0">No es cerveza</label>
+            </div>
+            <button (click)='setCerveza()' class="btn btn-primary mb-2">SET</button>
+          </form>
+          <div class="fs-16 p-t-30">
+            Enseña al sistema a diferenciar cerveza de espuma
+          </div>
+        </div>
+        <!--segundo pico-->
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+          <form [formGroup]="updatePrecio2" (ngSubmit)="setPrecio2()">
+            <div class="form-inline">
+              <div class="form-group mb-2">
+                <label class="bold">Actual:{{precio2}}</label>
+              </div>
+              <div class="form-group mx-sm-3 mb-2">
+                <ion-input formControlName="newPrecio2" type='number' id="precioinput2" class="form-control"
+                  placeholder="valor nuevo"></ion-input>
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">SET</button>
+            </div>
+            <div class="fs-16 p-t-30">Valor del precio por litro. Se espera un valor entero.</div>
+          </form>
+        </div>
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+          <form [formGroup]="updateSensibilidad2" (ngSubmit)="setSensibilidad2()">
+            <div class="form-inline">
+
+              <div class="form-group mb-2">
+                <label class="bold">Actual: {{sensibilidad2}}</label>
+              </div>
+              <div class="form-group mx-sm-3 mb-2">
+                <ion-input type='number' formControlName="newSensibilidad2" class="form-control"
+                  placeholder="valor nuevo">
+                </ion-input>
+              </div>
+              <button type="submit" class="btn btn-primary mb-2">SET</button>
+            </div>
+            <div class="fs-16 p-t-30">Define la sensibilidad para detectar espuma. Valores entre 70 a 100</div>
+          </form>
+        </div>
+        <div class="col-md-10 bg-white card p-t-30 p-b-20 align-items-center m-b-20">
+          <form class="form-inline">
+
+            <div class="form-group mx-sm-3 mb-2">
+              <label class="bold" *ngIf="cerveza2==1">Es cerveza</label>
+              <label class="bold" *ngIf="cerveza2==0">No es cerveza</label>
+            </div>
+            <button (click)='setCerveza2()' class="btn btn-primary mb-2">SET</button>
+          </form>
+          <div class="fs-16 p-t-30">
+            Enseña al sistema a diferenciar cerveza de espuma
+          </div>
+        </div>
+        <div class="col-md-10 bg-white card p-t-20 p-b-20 align-items-center m-b-20">
+          <div class="fs-30 p-t-10">Errores</div>
+          <div class="fs-16 p-t-10">{{lista}}</div>
+
+        </div>
+        <div class="col-md-8 p-t-15 p-b-50 align-items-center text-center">
+          <a class="btn btn-primary btn-xl" (click)="cerrar()">TERMINAR</a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  </header>
+  <!-- Bootstrap core JS-->
+  <!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+
+</body>

@@ -1,0 +1,39 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.telerik.plugins.nativepagetransitions": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-bluetooth-serial": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "vino.qdrink"
+    }
+  },
+  "dependent_plugins": {}
+}

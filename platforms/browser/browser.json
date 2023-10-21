@@ -1,0 +1,155 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Device\"><param name=\"browser-package\" value=\"Device\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"BarcodeScanner\"><param name=\"browser-package\" value=\"BarcodeScanner\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "com.telerik.plugins.nativepagetransitions": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-bluetooth-serial": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "vino.qdrink"
+    },
+    "phonegap-plugin-barcodescanner": {
+      "PACKAGE_NAME": "vino.qdrink"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
+      "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
+      "pluginId": "com.telerik.plugins.nativepagetransitions",
+      "clobbers": [
+        "window.plugins.nativepagetransitions"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-bluetooth-serial/www/bluetoothSerial.js",
+      "id": "cordova-plugin-bluetooth-serial.bluetoothSerial",
+      "pluginId": "cordova-plugin-bluetooth-serial",
+      "clobbers": [
+        "window.bluetoothSerial"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-bluetooth-serial/src/browser/bluetoothSerial.js",
+      "id": "cordova-plugin-bluetooth-serial.BluetoothSerial_browser",
+      "pluginId": "cordova-plugin-bluetooth-serial",
+      "clobbers": [
+        "window.bluetoothSerial"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "id": "cordova-plugin-device.device",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-device/src/browser/DeviceProxy.js",
+      "id": "cordova-plugin-device.DeviceProxy",
+      "pluginId": "cordova-plugin-device",
+      "runs": true
+    },
+    {
+      "file": "plugins/cordova-plugin-ionic-webview/src/www/util.js",
+      "id": "cordova-plugin-ionic-webview.IonicWebView",
+      "pluginId": "cordova-plugin-ionic-webview",
+      "clobbers": [
+        "Ionic.WebView"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "pluginId": "cordova-plugin-splashscreen",
+      "clobbers": [
+        "navigator.splashscreen"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+      "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+      "pluginId": "cordova-plugin-splashscreen",
+      "runs": true
+    },
+    {
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "id": "cordova-plugin-statusbar.statusbar",
+      "pluginId": "cordova-plugin-statusbar",
+      "clobbers": [
+        "window.StatusBar"
+      ]
+    },
+    {
+      "file": "plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js",
+      "id": "cordova-plugin-statusbar.StatusBarProxy",
+      "pluginId": "cordova-plugin-statusbar",
+      "runs": true
+    },
+    {
+      "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
+      "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
+      "pluginId": "phonegap-plugin-barcodescanner",
+      "clobbers": [
+        "cordova.plugins.barcodeScanner"
+      ]
+    },
+    {
+      "file": "plugins/phonegap-plugin-barcodescanner/src/browser/BarcodeScannerProxy.js",
+      "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
+      "pluginId": "phonegap-plugin-barcodescanner",
+      "runs": true
+    }
+  ],
+  "plugin_metadata": {
+    "com.telerik.plugins.nativepagetransitions": "0.7.0",
+    "cordova-plugin-bluetooth-serial": "0.4.7",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-ionic-keyboard": "2.2.0",
+    "cordova-plugin-ionic-webview": "4.2.1",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "2.4.2",
+    "cordova-plugin-whitelist": "1.3.3",
+    "phonegap-plugin-barcodescanner": "8.1.0"
+  }
+}
