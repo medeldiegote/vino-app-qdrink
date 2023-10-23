@@ -185,9 +185,9 @@ export class HomePage implements OnInit {
     this.barcodeScanner.scan(this.params).then(barcodeData => {
 
       if (barcodeData.cancelled == false) {
-
         var bytes = CryptoJS.AES.decrypt(barcodeData.text, 'MdMiAJORQWERm');
         var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+       
         //var decryptedData = barcodeData.text;
         switch (decryptedData) {
           case 'ConfiguracionPico': {
@@ -246,7 +246,6 @@ export class HomePage implements OnInit {
             if (this.arreglo[4] == '0') {
               this.httpClient.get<Client>('http://192.168.10.100:8090/api/clients/' + decryptedData).subscribe(
                 (res) => {
-                  console.log(res)
                   if (res.dinero) {
                     this.client.setCliente(res.id, res.nombre, res.apellido, res.dinero);
                     this.delay(250)
@@ -257,7 +256,9 @@ export class HomePage implements OnInit {
                 (err) => {
                   this.presentToast(err.error.message)
                   console.log((err))
-                }
+                  alert(err.message)
+                  alert(JSON.stringify(err) )
+               }
               );
             }
             break
