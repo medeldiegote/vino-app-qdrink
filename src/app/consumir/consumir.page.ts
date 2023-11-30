@@ -165,13 +165,13 @@ export class ConsumirPage implements OnInit {
         if (this.client.getIdClient() == 'clientegeneral') {
           this.client.clearCliente();
           this.presentToast("Sesión terminada")
-          this.router.navigate(['/home'])
+          this.sleep(2000).then(() => {this.router.navigate(['/home'])});          
         } else {
           this.httpClient.post('http://192.168.10.100:8090/api/transactions/', { client: this.client.getIdClient(), dinero: this.gasto, ingreso: false }).subscribe(
             (res) => {
               this.client.clearCliente();
               this.presentToast("Sesión terminada")
-              this.router.navigate(['/home'])
+              this.sleep(2000).then(() => {this.router.navigate(['/home'])});          
             }, (err) => console.log(err)
           );
         }
@@ -229,6 +229,9 @@ export class ConsumirPage implements OnInit {
     if (errores != '')
       this.presentToast(errores)
     return result
+  }
+  sleep(ms:number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
 export class Client {

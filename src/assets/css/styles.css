@@ -10098,7 +10098,7 @@ hr.light {
 }
 
 header.masthead {
-  background: linear-gradient(to bottom, rgb(49, 40, 34) 0%, rgba(49, 40, 34, 0.8) 0%), url("../img/bg.jpg");
+  background: linear-gradient(to bottom, rgb(49, 40, 34) 0%, rgba(49, 40, 34, 0.8) 0%), url("../img/img-8.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10109,7 +10109,7 @@ header.masthead {
 }
 
 header {
-  background: linear-gradient(to bottom, rgb(49, 40, 34) 0%, rgba(49, 40, 34, 0.8) 0%), url("../img/bg.jpg");
+  background: linear-gradient(to bottom, rgb(49, 40, 34) 0%, rgba(49, 40, 34, 0.8) 0%), url("../img/img-8.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10207,4 +10207,11 @@ header.masthead h1 {
   left: 50%;
   bottom: 0%; 
   position: absolute;
+}
+@font-face {
+  font-family: 'libre_baskervilleregular';
+  src: url('libre-baskerville.regular-webfont.woff2') format('woff2'),
+       url('libre-baskerville.regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

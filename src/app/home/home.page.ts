@@ -183,9 +183,9 @@ export class HomePage implements OnInit {
 
     this.client.clearCliente();
     this.barcodeScanner.scan(this.params).then(barcodeData => {
-
+    
       if (barcodeData.cancelled == false) {
-        var bytes = CryptoJS.AES.decrypt(barcodeData.text, 'MdMiAJORQWERm');
+        var bytes = CryptoJS.AES.decrypt(barcodeData.text, 'MdMiAJOREGeA');
         var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
        
         //var decryptedData = barcodeData.text;
@@ -256,60 +256,17 @@ export class HomePage implements OnInit {
                 (err) => {
                   this.presentToast(err.error.message)
                   console.log((err))
-                  alert(err.message)
-                  alert(JSON.stringify(err) )
+                  //alert(err.message)
+                  //alert(JSON.stringify(err) )
                }
               );
+            }else{
+              this.presentToast('No se ha podido realizar la operación')
             }
             break
           }
 
         }
-        /* if (decryptedData == 'ConfiguracionPico') {
-           if (this.estado == 'ok') {
-             //var cadena = this.arreglo[0] + ":" + this.arreglo[8] + ":0:0:1:" + this.arreglo[10];
-             var cadena = "0:0:0:0:1:0:0";
-             console.log('Configuración: ' + cadena)
-             if (cadena.split(':', 7).length == 7 && this.arreglo.length == 14) {
-               this.bluetoothSerial.write(cadena).then(success => {
-                 console.log(success)
-                 console.log('ok configuracion')
-               }, err => {
-                 console.log(err)
-               })
-             }
-           }
-         } else {
-           if (decryptedData == 'ClienteGeneral') {
-             if (this.estado == 'ok') {
-               this.client.setCliente('clientegeneral', 'Rubén', 'Cocuelle', '1000');
-               this.delay(250)
-               this.habilitar('1000', pico)
-             }
-           } else {
-             if (decryptedData == 'ConfiguracionLocal') {
-               this.go('/local')
-             } else {
-               if (this.arreglo[4] == '0') {
-                 this.httpClient.get<Client>('http://192.168.10.100:8090/api/clients/' + decryptedData).subscribe(
-                   (res) => {
-                     console.log(res)
-                     if (res.dinero) {
-                       this.client.setCliente(res.id, res.nombre, res.apellido, res.dinero);
-                       this.delay(250)
-                       this.habilitar(res.dinero, pico)
-                     } else this.presentToast('Cliente sin dinero')
-                   }
-                   ,
-                   (err) => {
-                     this.presentToast(err.error.message)
-                     console.log((err))
-                   }
-                 );
-               }
-             }
-           }
-         }*/
       }
 
     }).catch(err => {
